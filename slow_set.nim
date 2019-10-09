@@ -88,4 +88,4 @@ when isMainModule:
         let k2 = i + 1_000_000
         hs8.incl(k1)
         hs8.incl(k2)
-    echo "(3) time ", (cpuTime() - time)
+    echo "(8) time ", (cpuTime() - time)
