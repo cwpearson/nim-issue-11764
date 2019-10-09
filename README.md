@@ -11,6 +11,8 @@ nim c -d:release -r slow_set.nim
 * (4): (3), but hashset is sized for 100k insertions
 * (5): (3), but hashset is sized for 200k insertions
 * (6): (3), but hashset is sized for 1.1M insertions
+* (7): (3), but inserted in a random order
+* (8): (3), but IntSet
 
 example output 
 ```
@@ -23,10 +25,12 @@ active boot switches: -d:release
 ```
 
 ```
-(1) time 0.015417049
-(2) time 0.952415456
-(3) time 12.335662364
-(4) time 12.212460556
-(5) time 7.530930397999999
-(6) time 0.003257626999996432
+(1) time 0.013764
+(2) time 1.22484
+(3) time 16.345614
+(4) time 16.208671
+(5) time 9.738357999999998
+(6) time 0.002867999999999427
+(7) time 15.688863
+(3) time 0.002161999999998443
 ```

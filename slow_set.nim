@@ -1,6 +1,7 @@
 import sets
 import times
 import random
+import intsets
 
 when isMainModule:
     var hs1: HashSet[uint64]
@@ -10,6 +11,7 @@ when isMainModule:
     var hs5 = initHashSet[uint64](rightSize(200_000))
     var hs6 = initHashSet[uint64](rightSize(1_100_000))
     var hs7: HashSet[uint64]
+    var hs8 = initIntSet()
 
     # insert 0..200k
     var time = cpuTime()
@@ -78,3 +80,12 @@ when isMainModule:
         let k1 = uint64(vals[i])
         hs7.incl(k1)
     echo "(7) time ", (cpuTime() - time)
+
+    # interleave insert 0..100k and 1.0M..1.1M intset
+    time = cpuTime()
+    for i in 0..100_000:
+        let k1 = i
+        let k2 = i + 1_000_000
+        hs8.incl(k1)
+        hs8.incl(k2)
+    echo "(3) time ", (cpuTime() - time)
